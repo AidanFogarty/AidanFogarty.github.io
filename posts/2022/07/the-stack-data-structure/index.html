@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Aidan Fogarty ">
+<meta name="description" content="I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &amp;ldquo;stack&amp;rdquo; data structure.
+So what is the &amp;ldquo;stack&amp;rdquo; data structure?
+ A stack is a linear data structure that follows the principle of Last In First Out (LIFO).
+ So what does this mean?" />
+<meta name="keywords" content="aidan, fogarty, aidan fogarty, software engineer, angular, golang, git, kubernetes, data structures &amp; algorithms, python" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/posts/2022/07/the-stack-data-structure/" />
+
+
+    <title>
+        
+            The Stack Data Structure :: Aidan Fogarty  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.c46cbca46fa76c0fcd3da8313ecf4adee5fb3ffb0288c0902d7e90aead220d79.css">
+
+
+
+
+
+
+<meta itemprop="name" content="The Stack Data Structure">
+<meta itemprop="description" content="I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &ldquo;stack&rdquo; data structure.
+So what is the &ldquo;stack&rdquo; data structure?
+ A stack is a linear data structure that follows the principle of Last In First Out (LIFO).
+ So what does this mean?">
+<meta itemprop="datePublished" content="2022-07-03T20:25:32+01:00" />
+<meta itemprop="dateModified" content="2022-07-03T20:25:32+01:00" />
+<meta itemprop="wordCount" content="546">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="data structures &amp; algorithms,python," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="The Stack Data Structure"/>
+<meta name="twitter:description" content="I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &ldquo;stack&rdquo; data structure.
+So what is the &ldquo;stack&rdquo; data structure?
+ A stack is a linear data structure that follows the principle of Last In First Out (LIFO).
+ So what does this mean?"/>
+
+
+
+
+    <meta property="og:title" content="The Stack Data Structure" />
+<meta property="og:description" content="I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &ldquo;stack&rdquo; data structure.
+So what is the &ldquo;stack&rdquo; data structure?
+ A stack is a linear data structure that follows the principle of Last In First Out (LIFO).
+ So what does this mean?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/07/the-stack-data-structure/" />
+<meta property="og:image" content="/"/>
+<meta property="article:published_time" content="2022-07-03T20:25:32+01:00" />
+<meta property="article:modified_time" content="2022-07-03T20:25:32+01:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-07-03 20:25:32 &#43;0100 IST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#67a2c9;
+                   animation-duration:1.3s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="/posts/2022/07/the-stack-data-structure/">The Stack Data Structure</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &ldquo;stack&rdquo; data structure.</p>
+<p>So what is the &ldquo;stack&rdquo; data structure?</p>
+<blockquote>
+<p>A stack is a linear data structure that follows the principle of Last In First Out (LIFO).</p>
+</blockquote>
+<p>So what does this mean? This means that the last element added to the stack, is also the first one to be removed. Similar to how you would &ldquo;stack&rdquo; plates in a cupboard or cabinet, you would usually only add plates to the top of the pile, while only removing plates from the top as well.</p>
+
+    <img src="/images/stack.svg"  alt="stack example"  class="center"  />
+
+
+<p>From the above image, you can probably tell, a stack has two main operations you can perform on it:</p>
+<ul>
+<li><code>push</code> adds an item to the &ldquo;top&rdquo; of the stack.</li>
+<li><code>pop</code> removes an item from the &ldquo;top&rdquo; of the stack.</li>
+</ul>
+<p>A few other methods that can be available on the stack data structure are:</p>
+<ul>
+<li><code>peek</code> returns the item at the &ldquo;top&rdquo; of the stack without removing it.</li>
+<li><code>is_empty</code> checks whether the stack is empty.</li>
+<li><code>is_full</code> checks whether the stack is full.</li>
+<li><code>count</code> returns the current number of items on the stack.</li>
+</ul>
+<h2 id="implementing-a-stack">Implementing a Stack</h2>
+<p>There is a few ways to implement a stack but the most common way is using an array. Another option could be to use a <code>linked list</code>. By default, python&rsquo;s built-in data structure <code>list</code> can already be used as a stack.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stack <span style="color:#f92672">=</span> []
+
+<span style="color:#75715e"># append operates the same way as a stack &#34;push&#34;</span>
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; python main.py
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1</span>
+</code></pre></div><p>While the above implementation of a stack works well, it starts to slow down as the list grows in size. Under the hood, Python stores items next to each other in memory when using the <code>list</code> data structure. This means that python needs to do some clever memory management when the list grows bigger than the current block of memory. This will slow down the <code>push</code> (<code>append</code> in python) operation. Python has a better option in the form of the <code>collections.deque</code> module. It works the exact same as the <code>list</code> data structure, except it provide <code>O(1)</code> time for push/pop operations instead of <code>O(n)</code> on the <code>list</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+ 
+stack <span style="color:#f92672">=</span> deque()
+
+<span style="color:#75715e"># append operates the same way as a stack &#34;push&#34;</span>
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; python main.py
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1</span>
+</code></pre></div><p>That&rsquo;s how you make use of a stack in python (however it would be same in other languages). The next question might be, what is a stack useful for?</p>
+<ul>
+<li>
+<p>Browsers: a stack could be used to track all the URLs visited in a browser. Each time a site is visited, the URL would be added to a stack. Then, when you use the &ldquo;back&rdquo; button, it would remove the URL from the stack.</p>
+</li>
+<li>
+<p>Reversing strings: as you <code>pop</code> items from a stack, you are essentially going backwards. You could push all characters from a string onto a stack, then precede to pop all characters. This would give you the string in a reverse order.</p>
+</li>
+<li>
+<p>Processing expressions: can use a stack to calculate the result of a given expression. E.g <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a></p>
+</li>
+</ul>
+<p>Thanks for reading 😃</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/data-structures-algorithms/">data structures &amp; algorithms</a></span>
+        <span class="tag"><a href="/tags/python/">python</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        546 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-07-03 20:25
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="/">Aidan Fogarty</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Using <a href="https://github.com/rhazdon">hello-friend</a> Theme</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

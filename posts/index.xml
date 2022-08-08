@@ -1,0 +1,90 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Aidan Fogarty</title>
+        <link>/posts/</link>
+        <description>Recent content in Posts on Aidan Fogarty</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 03 Jul 2022 20:25:32 +0100</lastBuildDate>
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>The Stack Data Structure</title>
+            <link>/posts/2022/07/the-stack-data-structure/</link>
+            <pubDate>Sun, 03 Jul 2022 20:25:32 +0100</pubDate>
+            
+            <guid>/posts/2022/07/the-stack-data-structure/</guid>
+            <description>I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &amp;ldquo;stack&amp;rdquo; data structure.
+So what is the &amp;ldquo;stack&amp;rdquo; data structure?
+ A stack is a linear data structure that follows the principle of Last In First Out (LIFO).
+ So what does this mean?</description>
+            <content type="html"><![CDATA[<p>I have decided to refresh my brain, with all the data structures and algorithms and what better way to do it, than to write about it? So, the first topic I plan to walk through is the &ldquo;stack&rdquo; data structure.</p>
+<p>So what is the &ldquo;stack&rdquo; data structure?</p>
+<blockquote>
+<p>A stack is a linear data structure that follows the principle of Last In First Out (LIFO).</p>
+</blockquote>
+<p>So what does this mean? This means that the last element added to the stack, is also the first one to be removed. Similar to how you would &ldquo;stack&rdquo; plates in a cupboard or cabinet, you would usually only add plates to the top of the pile, while only removing plates from the top as well.</p>
+
+    <img src="/images/stack.svg"  alt="stack example"  class="center"  />
+
+
+<p>From the above image, you can probably tell, a stack has two main operations you can perform on it:</p>
+<ul>
+<li><code>push</code> adds an item to the &ldquo;top&rdquo; of the stack.</li>
+<li><code>pop</code> removes an item from the &ldquo;top&rdquo; of the stack.</li>
+</ul>
+<p>A few other methods that can be available on the stack data structure are:</p>
+<ul>
+<li><code>peek</code> returns the item at the &ldquo;top&rdquo; of the stack without removing it.</li>
+<li><code>is_empty</code> checks whether the stack is empty.</li>
+<li><code>is_full</code> checks whether the stack is full.</li>
+<li><code>count</code> returns the current number of items on the stack.</li>
+</ul>
+<h2 id="implementing-a-stack">Implementing a Stack</h2>
+<p>There is a few ways to implement a stack but the most common way is using an array. Another option could be to use a <code>linked list</code>. By default, python&rsquo;s built-in data structure <code>list</code> can already be used as a stack.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stack <span style="color:#f92672">=</span> []
+
+<span style="color:#75715e"># append operates the same way as a stack &#34;push&#34;</span>
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; python main.py
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1</span>
+</code></pre></div><p>While the above implementation of a stack works well, it starts to slow down as the list grows in size. Under the hood, Python stores items next to each other in memory when using the <code>list</code> data structure. This means that python needs to do some clever memory management when the list grows bigger than the current block of memory. This will slow down the <code>push</code> (<code>append</code> in python) operation. Python has a better option in the form of the <code>collections.deque</code> module. It works the exact same as the <code>list</code> data structure, except it provide <code>O(1)</code> time for push/pop operations instead of <code>O(n)</code> on the <code>list</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+ 
+stack <span style="color:#f92672">=</span> deque()
+
+<span style="color:#75715e"># append operates the same way as a stack &#34;push&#34;</span>
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+<span style="color:#66d9ef">print</span>(stack<span style="color:#f92672">.</span>pop())
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; python main.py
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1</span>
+</code></pre></div><p>That&rsquo;s how you make use of a stack in python (however it would be same in other languages). The next question might be, what is a stack useful for?</p>
+<ul>
+<li>
+<p>Browsers: a stack could be used to track all the URLs visited in a browser. Each time a site is visited, the URL would be added to a stack. Then, when you use the &ldquo;back&rdquo; button, it would remove the URL from the stack.</p>
+</li>
+<li>
+<p>Reversing strings: as you <code>pop</code> items from a stack, you are essentially going backwards. You could push all characters from a string onto a stack, then precede to pop all characters. This would give you the string in a reverse order.</p>
+</li>
+<li>
+<p>Processing expressions: can use a stack to calculate the result of a given expression. E.g <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a></p>
+</li>
+</ul>
+<p>Thanks for reading 😃</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
