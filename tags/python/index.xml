@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 03 Jul 2022 20:25:32 +0100</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 18:00:12 +0100</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Queue Data Structure</title>
+      <link>/posts/2022/07/the-queue-data-structure/</link>
+      <pubDate>Mon, 04 Jul 2022 18:00:12 +0100</pubDate>
+      
+      <guid>/posts/2022/07/the-queue-data-structure/</guid>
+      <description>A Queue is a linear structure which follows the principle of First In First Out (FIFO).
+ In simple terms, a queue is just a data structure that implements a &amp;ldquo;first come, first serve&amp;rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.
+The Queue data structure has two main operations:
+ enqueue adds an item to the back of the queue.</description>
+    </item>
+    
     <item>
       <title>The Stack Data Structure</title>
       <link>/posts/2022/07/the-stack-data-structure/</link>

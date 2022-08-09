@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Aidan Fogarty ">
+<meta name="description" content="A Queue is a linear structure which follows the principle of First In First Out (FIFO).
+ In simple terms, a queue is just a data structure that implements a &amp;ldquo;first come, first serve&amp;rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.
+The Queue data structure has two main operations:
+ enqueue adds an item to the back of the queue." />
+<meta name="keywords" content="aidan, fogarty, aidan fogarty, software engineer, angular, golang, git, kubernetes, data structures &amp; algorithms, python" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/posts/2022/07/the-queue-data-structure/" />
+
+
+    <title>
+        
+            The Queue Data Structure :: Aidan Fogarty  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.c46cbca46fa76c0fcd3da8313ecf4adee5fb3ffb0288c0902d7e90aead220d79.css">
+
+
+
+
+
+
+<meta itemprop="name" content="The Queue Data Structure">
+<meta itemprop="description" content="A Queue is a linear structure which follows the principle of First In First Out (FIFO).
+ In simple terms, a queue is just a data structure that implements a &ldquo;first come, first serve&rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.
+The Queue data structure has two main operations:
+ enqueue adds an item to the back of the queue.">
+<meta itemprop="datePublished" content="2022-07-04T18:00:12+01:00" />
+<meta itemprop="dateModified" content="2022-07-04T18:00:12+01:00" />
+<meta itemprop="wordCount" content="319">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="data structures &amp; algorithms,python," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="The Queue Data Structure"/>
+<meta name="twitter:description" content="A Queue is a linear structure which follows the principle of First In First Out (FIFO).
+ In simple terms, a queue is just a data structure that implements a &ldquo;first come, first serve&rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.
+The Queue data structure has two main operations:
+ enqueue adds an item to the back of the queue."/>
+
+
+
+
+    <meta property="og:title" content="The Queue Data Structure" />
+<meta property="og:description" content="A Queue is a linear structure which follows the principle of First In First Out (FIFO).
+ In simple terms, a queue is just a data structure that implements a &ldquo;first come, first serve&rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.
+The Queue data structure has two main operations:
+ enqueue adds an item to the back of the queue." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/07/the-queue-data-structure/" />
+<meta property="og:image" content="/"/>
+<meta property="article:published_time" content="2022-07-04T18:00:12+01:00" />
+<meta property="article:modified_time" content="2022-07-04T18:00:12+01:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-07-04 18:00:12 &#43;0100 IST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#67a2c9;
+                   animation-duration:1.3s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        2 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="/posts/2022/07/the-queue-data-structure/">The Queue Data Structure</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <blockquote>
+<p>A Queue is a linear structure which follows the principle of First In First Out (FIFO).</p>
+</blockquote>
+<p>In simple terms, a queue is just a data structure that implements a &ldquo;first come, first serve&rdquo; solution. Similiar to how if you join a queue in a coffee shop, you must wait until all customers ahead of you, have ordered their coffee.</p>
+
+    <img src="/images/simplequeue.svg"  alt="simple queue example"  class="center"  />
+
+
+<p>The Queue data structure has two main operations:</p>
+<ul>
+<li><code>enqueue</code> adds an item to the back of the queue.</li>
+<li><code>dequeue</code> removes an item from the front of the queue.</li>
+</ul>
+<p>Some other useful operations that are usually available to a queue are:</p>
+<ul>
+<li><code>size</code> returns the number of items in the queue.</li>
+<li><code>is_empty</code> check whether the queue has any items.</li>
+<li><code>peek</code> returns the item from the front of the queue without removing it (Similar to a cashier shouting &ldquo;who&rsquo;s next?&quot;).</li>
+</ul>
+<p>You can implement a simple queue pretty easily with python&rsquo;s built-in data structure <code>list</code>. The <code>append</code> function acts as the <code>enqueue</code> function. <code>pop(0)</code> which means to remove an element from position &ldquo;0&rdquo; in the list, acts as the <code>dequeue</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">queue <span style="color:#f92672">=</span> []
+
+<span style="color:#75715e"># append operates as the &#34;enqueue&#34;</span>
+queue<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+queue<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#75715e"># pop(0) operates as the &#34;dequeue&#34;</span>
+<span style="color:#66d9ef">print</span>(queue<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>))
+<span style="color:#66d9ef">print</span>(queue<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>))
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; python main.py
+<span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+</code></pre></div><p>The above implementation of queue will work well for most cases but it can become quite slow as the queue grows in size. Python&rsquo;s <code>list</code> operates in <code>O(n)</code> time when inserting or deleting an item from the beginning of the list. Python has a better option in the form of the <code>collections.deque</code> module, which does these operations in <code>O(1)</code> time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+  
+queue <span style="color:#f92672">=</span> deque()
+
+<span style="color:#75715e"># append operates as the &#34;enqueue&#34;</span>
+queue<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+queue<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#75715e"># popleft operates as the &#34;dequeue&#34;</span>
+<span style="color:#66d9ef">print</span>(queue<span style="color:#f92672">.</span>popleft())
+<span style="color:#66d9ef">print</span>(queue<span style="color:#f92672">.</span>popleft())
+</code></pre></div><p>There is also an explicit <a href="https://docs.python.org/3/library/queue.html">Queue</a> module in python that you can make use of that operates in the same way (You also use this library to implement other types of queues: <code>Priority</code>, <code>LIFO/Stack</code>, <code>Deque</code>).</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/data-structures-algorithms/">data structures &amp; algorithms</a></span>
+        <span class="tag"><a href="/tags/python/">python</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        319 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-07-04 18:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="/posts/2022/07/the-stack-data-structure/">
+                    <span class="button__text">The Stack Data Structure</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="/">Aidan Fogarty</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Using <a href="https://github.com/rhazdon">hello-friend</a> Theme</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>
