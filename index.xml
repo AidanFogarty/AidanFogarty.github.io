@@ -4,16 +4,18 @@
     <title>Aidan Fogarty</title>
     <link>/</link>
     <description>Recent content on Aidan Fogarty</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>/about/</guid>
-      <description>&lt;p&gt;Full stack engineer.&lt;/p&gt;&#xA;&lt;p&gt;Building with AI and making it scale.&lt;/p&gt;&#xA;&lt;p&gt;Based in Dublin, Ireland. Like to surf, code and watch Formula 1.&lt;/p&gt;&#xA;&lt;p&gt;Python, Go, and all things tech.&lt;/p&gt;&#xA;&lt;p&gt;Feel free to reach out.&lt;/p&gt;</description>
+      <description>Hi! I&amp;rsquo;m Aidan and I am a software engineer based in Ireland. I studied Computer Science at Dublin City University. I am passionate about all things tech, especially about anything that lives on the internet which includes web apps, mobile apps and everything in between!
+I currently work at Arcane, a small but growing team on a mission to build the platform for modern marketers who frequently spend time on repetitive and time-intensive tasks.</description>
     </item>
+    
   </channel>
 </rss>
